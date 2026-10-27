@@ -174,7 +174,7 @@ AFRAME.registerComponent('tank-interaction', {
         );
 
         // Blender 匯出時已轉為 Y-up。
-        // 水深與浮萍高度皆沿 GLB 的 Y 軸改變。
+        // 水深與滿江紅高度皆沿 GLB 的 Y 軸改變。
         mesh.traverse(obj => {
           if (!obj.isMesh) return;
 
@@ -255,7 +255,7 @@ AFRAME.registerComponent('tank-interaction', {
     this.surface.position.y =
       this.base + this.depth;
 
-    // 浮萍原點位於水面。
+    // 滿江紅原點位於水面。
     // 葉狀體與根跟隨整株升降。
     this.plant.position.y =
       this.base + this.depth;
@@ -281,7 +281,7 @@ AFRAME.registerComponent('tank-interaction', {
 <body>
 
 <div id="top" class="panel">
-  <h1>浮萍與水位 AR 實驗</h1>
+  <h1>滿江紅與水位 AR 實驗</h1>
 
   <p
     id="status"
@@ -296,7 +296,7 @@ AFRAME.registerComponent('tank-interaction', {
   </button>
 
   <p class="note">
-    浮萍外形與尺寸為教學放大示意；
+    滿江紅外形與尺寸為教學放大示意；
     水位升降為互動模擬。
   </p>
 </div>
@@ -325,7 +325,7 @@ AFRAME.registerComponent('tank-interaction', {
   </div>
 
   <p id="result">
-    試著降低水位，觀察浮萍的位置。
+    試著降低水位，觀察滿江紅的位置。
   </p>
 
   <div class="row">
@@ -335,7 +335,7 @@ AFRAME.registerComponent('tank-interaction', {
   </div>
 
   <p class="note">
-    觀察：浮萍是否一直位於水面？
+    觀察：滿江紅是否一直位於水面？
     根是否固定在槽底？
   </p>
 </div>
@@ -546,7 +546,7 @@ document.querySelector('#target')
     if (!failed) {
       status.textContent =
         '辨識成功！改變水位，' +
-        '觀察浮萍與水面的相對位置。';
+        '觀察滿江紅與水面的相對位置。';
     }
   });
 
@@ -571,15 +571,15 @@ function setLevel(percent) {
 
   if (p < 34) {
     result.textContent =
-      '低水位：浮萍隨水面下降，根仍垂在水中。';
+      '低水位：滿江紅隨水面下降，根仍垂在水中。';
 
   } else if (p > 66) {
     result.textContent =
-      '高水位：浮萍隨水面上升，仍漂浮在水面。';
+      '高水位：滿江紅隨水面上升，仍漂浮在水面。';
 
   } else {
     result.textContent =
-      '中水位：浮萍位在水面，根沒有固定在槽底。';
+      '中水位：滿江紅位在水面，根沒有固定在槽底。';
   }
 }
 
